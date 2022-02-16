@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-urlshortener-api",
+  "version": "1.0.0",
+  "description": "urlShortner",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominiquehereish/NodeJs-UrlShortener-API.git"
+  },
+  "author": "Dominique Hereish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominiquehereish/NodeJs-UrlShortener-API/issues"
+  },
+  "homepage": "https://github.com/dominiquehereish/NodeJs-UrlShortener-API#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
