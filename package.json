@@ -18,7 +18,8 @@
   "homepage": "https://github.com/dominiquehereish/NodeJs-UrlShortener-API#readme",
   "dependencies": {
     "express": "^4.17.2",
-    "mongoose": "^6.2.1"
+    "mongoose": "^6.2.1",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
