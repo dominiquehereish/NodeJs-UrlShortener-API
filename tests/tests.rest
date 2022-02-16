@@ -1,2 +1,13 @@
 ###
 GET http://localhost:5000/api
+
+###
+GET http://localhost:5000/api/getAll
+
+###
+POST http://localhost:5000/api/create
+Content-Type: application/json
+
+{
+    "full" : "http://www.google.com"
+}
