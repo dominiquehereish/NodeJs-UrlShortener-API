@@ -15,7 +15,7 @@ class ShortenerController{
         res.status(200).json({})
     }
 
-    async createOne (req, res) {
+    async create (req, res) {
         res.status(200).json({})
     }
 
