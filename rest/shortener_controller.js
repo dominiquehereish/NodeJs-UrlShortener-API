@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const urls = require('../models/urls')
+const Urls = require('../models/urls')
 
 class ShortenerController{
 
@@ -8,7 +8,12 @@ class ShortenerController{
     }
 
     async getAll (req, res) {
-        res.status(200).json({})
+        try{
+            const all = await Urls.find()
+            res.json(all)
+        } catch (err){
+            res.status(500).json({message: err.message})
+        }
     }
 
     async getOne (req, res) {
@@ -16,7 +21,15 @@ class ShortenerController{
     }
 
     async create (req, res) {
-        res.status(200).json({})
+        const shortUrl = new Urls({
+            full: req.body.full
+        })
+        try{
+            const newUrl = await shortUrl.save()
+            res.status(201).json(newUrl)
+        }catch (err){
+            res.status(400).json({message: err.message})
+        }
     }
 
     async delete (req, res) {
