@@ -1,5 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const subscribersController = require('./shortener_controller')
+const shortenerController = require('./shortener_controller')
+
+router.get('/', shortenerController.index)
+router.get('/getAll', shortenerController.getAll)
+router.get('/getOne', shortenerController.getOne)
+router.post('/create', shortenerController.create)
+router.delete('/:id', shortenerController.delete)
 
 module.exports = router
