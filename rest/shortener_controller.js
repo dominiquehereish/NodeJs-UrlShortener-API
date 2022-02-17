@@ -17,7 +17,16 @@ class ShortenerController{
     }
 
     async getOne (req, res) {
-        res.status(200).json({})
+        let url
+        try{
+            url = await Urls.findOne({short: req.body.short})
+            res.json(url)
+            if(url == null){
+                return res.status(404).json({message: 'can not find this link in database.'})
+            }
+        }catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
     }
 
     async create (req, res) {
@@ -33,7 +42,17 @@ class ShortenerController{
     }
 
     async delete (req, res) {
-        res.status(200).json({})
+        let url
+        try{
+            url = await Urls.findOne({short: req.body.short})
+            await url.remove()
+            res.json({ message: 'Deleted Short link successfully.' })
+            if(url == null){
+                return res.status(404).json({message: 'can not find short link.'})
+            }
+        }catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
     }
 }
 
