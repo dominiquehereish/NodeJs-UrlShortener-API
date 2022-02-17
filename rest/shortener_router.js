@@ -6,6 +6,6 @@ router.get('/', shortenerController.index)
 router.get('/getAll', shortenerController.getAll)
 router.get('/getOne', shortenerController.getOne)
 router.post('/create', shortenerController.create)
-router.delete('/:id', shortenerController.delete)
+router.delete('/delete', shortenerController.delete)
 
 module.exports = router
