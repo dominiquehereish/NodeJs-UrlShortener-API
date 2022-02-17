@@ -9,5 +9,13 @@ POST http://localhost:5000/api/create
 Content-Type: application/json
 
 {
-    "full" : "http://www.google.com"
+    "full" : "https://www.yahoo.com"
+}
+
+###
+DELETE http://localhost:5000/api/delete
+Content-Type: application/json
+
+{
+    "short" : "SJbEXC9J5"
 }
