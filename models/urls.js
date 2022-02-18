@@ -9,7 +9,6 @@ const urlsSchema = new mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: shortId.generate
     },
     subscribeDate: {
         type: Date,
