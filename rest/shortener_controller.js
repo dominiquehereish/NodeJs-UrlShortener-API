@@ -33,16 +33,12 @@ class ShortenerController{
     async create (req, res) {
         let fullUrl = req.body.full
         let redirect = req.body.short
-        console.log(redirect)
         if ( redirect == undefined){
             redirect = shortId.generate()
-            console.log(redirect)
         }else{
             let exists = await Urls.findOne({short: redirect})
             if (exists != undefined){
-                console.log("redirect exists")
-            }else{
-                console.log(exists)
+               return res.status(400).json({message: 'The short link requested already exists. Please try another one.'})
             }
         }
         const shortUrl = new Urls({
