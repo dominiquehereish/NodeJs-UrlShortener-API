@@ -9,7 +9,16 @@ POST http://localhost:5000/api/create
 Content-Type: application/json
 
 {
-    "full" : "https://www.yahoo.com"
+    "full" : "https://www.msn.com"
+}
+
+###
+POST http://localhost:5000/api/create
+Content-Type: application/json
+
+{
+    "full" : "https://www.ail.com",
+    "short" : "res"
 }
 
 ###
