@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const shortId = require('shortid')
 const Urls = require('../models/urls')
 
 class ShortenerController{
@@ -30,8 +31,23 @@ class ShortenerController{
     }
 
     async create (req, res) {
+        let fullUrl = req.body.full
+        let redirect = req.body.short
+        console.log(redirect)
+        if ( redirect == undefined){
+            redirect = shortId.generate()
+            console.log(redirect)
+        }else{
+            let exists = await Urls.findOne({short: redirect})
+            if (exists != undefined){
+                console.log("redirect exists")
+            }else{
+                console.log(exists)
+            }
+        }
         const shortUrl = new Urls({
-            full: req.body.full
+            full: fullUrl,
+            short: redirect
         })
         try{
             const newUrl = await shortUrl.save()
