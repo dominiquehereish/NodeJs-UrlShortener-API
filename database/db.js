@@ -14,6 +14,8 @@ class Mongo{
         process.exit();
         });
     }
+
+    
 }
 
 module.exports = new Mongo()
